@@ -1,11 +1,14 @@
 package com.example.mylogin
 
-import androidx.appcompat.app.AppCompatActivity
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import com.example.mylogin.R.id.*
 
 class wellcome : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_wellcome)
@@ -17,7 +20,11 @@ class wellcome : AppCompatActivity() {
         val rollButton: Button = findViewById(R.id.roll_button)
         val rollButton2: Button = findViewById(R.id.roll_button2)
         val cekbutton: Button = findViewById(R.id.cek_button)
-
+        val htr: Button = findViewById(R.id.hapus)
+        htr.setOnClickListener{
+            val tt = Intent(this@wellcome,History::class.java)
+            startActivity(tt)
+        }
         rollButton.setOnClickListener { rollDice() }
         rollButton2.setOnClickListener { rollDice2() }
         cekbutton.setOnClickListener { cekbutton ()}
@@ -98,11 +105,15 @@ class wellcome : AppCompatActivity() {
 
 
     }
+
+    internal class Book (var resultText: String, var title: String)
+
     private fun cekbutton () {
         val resultText : TextView = findViewById(result_Text)
         val resultText2 : TextView = findViewById(result_text2)
         val hasilhitung : EditText = findViewById(hasilhitung)
         val jawab : TextView = findViewById(R.id.jawab)
+
 
 
         val a = resultText.text.toString().toInt()
@@ -115,10 +126,17 @@ class wellcome : AppCompatActivity() {
 
             val akhinput: Int = input.toInt()
             if (akhinput==hasil) {
+                val bookList = ArrayList<Book>()
+
+
                 Toast.makeText(this, "Horee Benarrr, jadi KITA PACARAN", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(this, "Yahhh Salahhh, gajadi PACARAN dong", Toast.LENGTH_SHORT).show()
             }
         }
+
     }
+
+
+
 }
