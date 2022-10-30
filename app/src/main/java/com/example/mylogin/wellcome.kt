@@ -6,6 +6,12 @@ import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mylogin.R.id.*
+import android.provider.AlarmClock
+import android.view.View
+import kotlinx.coroutines.NonCancellable
+
+
+var jawaban : MutableList<String> = mutableListOf<String>()
 
 class wellcome : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -20,11 +26,23 @@ class wellcome : AppCompatActivity() {
         val rollButton: Button = findViewById(R.id.roll_button)
         val rollButton2: Button = findViewById(R.id.roll_button2)
         val cekbutton: Button = findViewById(R.id.cek_button)
+//
+//        fun sendMessage(view: View) {
+//            val textView = findViewById<TextView>(R.id.hapus)
+//            val message = textView.text.toString()
+//            val intent = Intent(this, History::class.java).apply {
+//                putExtra(AlarmClock.EXTRA_MESSAGE, message)
+//            }
+//
+//            startActivity(intent)
+//        }
+
         val htr: Button = findViewById(R.id.hapus)
         htr.setOnClickListener{
             val tt = Intent(this@wellcome,History::class.java)
             startActivity(tt)
         }
+
         rollButton.setOnClickListener { rollDice() }
         rollButton2.setOnClickListener { rollDice2() }
         cekbutton.setOnClickListener { cekbutton ()}
@@ -102,6 +120,7 @@ class wellcome : AppCompatActivity() {
 
         val hasil = randomInt + randomInt2.toInt()
         resultText2.text = hasil.toString()
+        //jawaban.add(hasil.toString())
 
 
     }
@@ -119,6 +138,8 @@ class wellcome : AppCompatActivity() {
         val a = resultText.text.toString().toInt()
         val b = resultText2.text.toString().toInt()
         val hasil = a + b
+        jawaban.add("jawaban yang benar $hasil")
+        //jawaban.add(hasil.toString())
         val input = hasilhitung.getText().toString()
         if (input.isEmpty()) {
             hasilhitung.error="Eitss Harus Diisi Yaaa"
@@ -126,12 +147,11 @@ class wellcome : AppCompatActivity() {
 
             val akhinput: Int = input.toInt()
             if (akhinput==hasil) {
-                val bookList = ArrayList<Book>()
-
-
+                //jawaban.add("jawaban anda benar")
                 Toast.makeText(this, "Horee Benarrr, jadi KITA PACARAN", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(this, "Yahhh Salahhh, gajadi PACARAN dong", Toast.LENGTH_SHORT).show()
+                //jawaban.add(" jawaban anda salah")
             }
         }
 
