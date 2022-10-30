@@ -138,7 +138,7 @@ class wellcome : AppCompatActivity() {
         val a = resultText.text.toString().toInt()
         val b = resultText2.text.toString().toInt()
         val hasil = a + b
-        jawaban.add("jawaban yang benar $hasil")
+        //jawaban.add("Sayang, jawabannya yang benar itu $hasil")
         //jawaban.add(hasil.toString())
         val input = hasilhitung.getText().toString()
         if (input.isEmpty()) {
@@ -147,11 +147,12 @@ class wellcome : AppCompatActivity() {
 
             val akhinput: Int = input.toInt()
             if (akhinput==hasil) {
-                //jawaban.add("jawaban anda benar")
+                jawaban.add("Yeyy, jawaban si cantik benar. Selamat ya Cantikk")
+
                 Toast.makeText(this, "Horee Benarrr, jadi KITA PACARAN", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(this, "Yahhh Salahhh, gajadi PACARAN dong", Toast.LENGTH_SHORT).show()
-                //jawaban.add(" jawaban anda salah")
+                jawaban.add("Sayang, jawabannya yang benar itu $hasil. Gpp coba lagi ya cantik")
             }
         }
 

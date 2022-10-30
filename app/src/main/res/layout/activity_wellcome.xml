@@ -34,6 +34,7 @@
 
     <Button
         android:id="@+id/roll_button"
+        android:fontFamily="@font/fresca"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Roll 1"
@@ -46,6 +47,7 @@
 
     <Button
         android:id="@+id/roll_button2"
+        android:fontFamily="@font/fresca"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Roll 2"
@@ -102,6 +104,7 @@
 
     <TextView
         android:id="@+id/jawab"
+        android:fontFamily="@font/bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Kalau Jawabannya Benar Kita Pacaran Yaaa"
@@ -112,11 +115,12 @@
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.801"
+        app:layout_constraintVertical_bias="0.860"
         android:textStyle="bold"/>
 
     <Button
         android:id="@+id/cek_button"
+        android:fontFamily="@font/fresca"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cek Jawaban"
@@ -133,6 +137,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Kunci Jawaban"
+        android:fontFamily="@font/fresca"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
